@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    MSSV: <input type="text" name="MSSV"><br>
+    Name: <input type="text" name="Name"><br>
+    Address: <input type="text" name="Address"><br>
+    <button type="submit">Submit</button>
+</form>
+<h1>HIEU LON XAO</h1>
+
+{#    <p>{{ df.name }}</p>#}
+{#    <p>{{ df.mssv }}</p>#}
+{#    <p>{{ df.address }}</p>#}
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>mssv</th>
+        <th>addr</th>
+    </tr>
+        {% for df in a %}
+        <tr>
+            <td>{{ df.id }}</td>
+            <td>{{ df.name }}</td>
+            <td>{{ df.mssv }}</td>
+            <td>{{ df.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

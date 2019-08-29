@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    MSSV: <input type="text" name="MSSV"><br><br>
+    Name: <input type="text" name="name"><br><br>
+    Address: <input type="text" name="address"><br><br>
+    <button type="submit" >Submit</button>
+</form>
+options: <select>
+          <option value="Vnd">Vnd</option>
+          <option value="$">$</option>
+        </select>
+
+  <form method="post">
+    {%  csrf_token %}
+            <h1 class="title-pra">Monetary Unit</h1>
+               <div class="container">
+                   <div class="mone unit">
+                    <input type="radio" id="Vnd" value="Vnd" class="mone unit1" name="radio" checked>
+                   <label for="Vnd">Vnd</label>
+                       <div class="outer-circle"></div>
+                   </div>
+                    <div class="circlecheck">
+                       <input type="radio" id="$" value="$" class="mone unit2" name="radio" checked>
+                       <label for="$">$</label>
+                    </div>
+                </div>
+               <div>
+                <button type="submit" >Submit1</button>
+               </div>
+</form>
+<h1> Kết quả</h1>
+   <table>
+    {% for d in unit %}
+        <tr>
+        <td>{{ d.unit }}</td>
+        </tr>
+    {% endfor %}
+   </table>
+</body>
+</html>

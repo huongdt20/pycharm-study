@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    options:<select class="tb tb-test" id="tb_tb" name="select" >
+            <option value="Vnd" selected>Vnd</option>
+            <option value="$" selected>$</option>
+            </select>
+    <button type="submit" >Submit</button>
+</form>
+ <h1> Kết quả</h1>
+   <table>
+      {% for w in unit1 %}
+        <tr>
+        <td>{{ w.unit }}</td>
+{#        <td>{{ w.id }}</td>#}
+        </tr>
+      {% endfor %}
+   </table>
+</body>
+</html>
